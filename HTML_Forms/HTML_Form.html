@@ -32,9 +32,9 @@
         <fieldset>
             <legend>User Details:</legend><br>
             <label for="firstname">First Name:</label>
-            <input type="text" name="firstname" id="firstname" required><br>
+            <input type="text" name="firstname" id="firstname" required maxlength="10" autofocus><br>
             <label for="lastname">Last Name:</label>
-            <input type="text" name="lastname" id="lastname" required><br>
+            <input type="text" name="lastname" id="lastname" required maxlength="10"><br>
             <label for="email">Email:</label>
             <input type="email" name="text" id="email" oninput="validatingEmail()" required><br>
             <span id="emailError" class="error"></span><br><br>
