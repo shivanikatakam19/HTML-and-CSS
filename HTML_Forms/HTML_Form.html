@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <title>HTML Form</title>
+    <style>
+        form {
+            width: 50%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: small;
+        }
+
+        legend {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="userForm">
+        <fieldset>
+            <legend>User Details:</legend><br>
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" id="firstname" required><br>
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lastname" id="lastname" required><br>
+            <label for="email">Email:</label>
+            <input type="email" name="text" id="email" oninput="validatingEmail()" required><br>
+            <span id="emailError" class="error"></span><br><br>
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label> <br>
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label><br><br>
+            <label>Select your Continent:</label>
+            <select id="continent" name="continent">
+                <option value="Asia">Asia</option>
+                <option value="North America">North America</option>
+                <option value="Europe">Europe</option>
+                <option value="Africa">Africa</option>
+                <option value="South America">South America</option>
+                <option value="Antartica">Antartica</option>
+                <option value="Oceania">Oceania</option>
+            </select><br><br>
+            <label>Subscribe?</label>
+            <input type="checkbox" id="subscribe" name="subscribe"><br><br>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+
+<script>
+    function validatingEmail() {
+        const email = document.getElementById('email').value
+        const errorSpan = document.getElementById('emailError')
+        if (!/^[A-Za-z0-9\._%+\-]+@[A-Za-z0-9\.\-]+\.[A-Za-z]{2,}$/.test(email)) {
+            errorSpan.textContent = 'Please enter a valid Email.';
+        } else {
+            errorSpan.textContent = '';
+        }
+    }
+
+    document.getElementById('userForm').addEventListener('submit', function (event) {
+        const firstName = document.getElementById('firstname').value;
+        const lastName = document.getElementById('lastname').value;
+        const email = document.getElementById('email').value;
+        const continent = document.getElementById('continent').value;
+        const isSubscribed = document.getElementById('subscribe').value == 'on' ? 'Yes' : 'No';
+
+        const genderElements = document.getElementsByName('gender');
+        let selectedGender = '';
+        for (let i = 0; i < genderElements.length; i++) {
+            if (genderElements[i].checked) {
+                selectedGender = genderElements[i].value;
+                break;
+            }
+        }
+
+        window.alert(`Name:${firstName} ${lastName}, Email:${email}, Continent:${continent}, Gender:${selectedGender}, Subscribed:${isSubscribed}`)
+    })
+
+</script>
+
+</html>
