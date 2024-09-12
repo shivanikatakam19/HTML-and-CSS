@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Templating</title>
+</head>
+
+<body>
+    <h3>The template element</h3>
+    <button onclick="showHiddenContent()">Show hidden content</button>
+
+    <template>
+        <h2>Flower</h2>
+        <p>This Content is show by using template tag.</p>
+        <img src="./flower.jpg" width="214" height="204">
+    </template>
+
+    <script>
+        function showHiddenContent() {
+            let template = document.getElementsByTagName('template')[0];
+            let clon = template.content.cloneNode(true);
+            document.body.appendChild(clon);
+        }
+    </script>
+</body>
+
+</html>

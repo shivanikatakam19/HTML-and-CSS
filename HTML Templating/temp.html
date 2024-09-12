@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        h5 {
+            background-color: lightgrey;
+            width: 300px;
+            border: 15px solid blue;
+            padding: 50px;
+            margin: 20px;
+        }
+
+        p {
+            color: red;
+            text-align: center;
+        }
+
+        #id_selector {
+            background-color: blue;
+            color: white;
+            text-align: left;
+            width: fit-content;
+        }
+
+        .class_selector {
+            border: 2px solid olivedrab;
+            width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>The template Element</h1>
+    <button onclick="showContent()">Show hidden content</button>
+    <template>
+        <h3>Hidden Content: <h4>(Displaying content using box model.)</h4>
+        </h3>
+        <h5>This content is shown by handling the template with onclick function.</h5>
+        <p>This content text is styled by using CSS element selector. Applied red color and text align as center for
+            element "p" in style tag.</p>
+        <p id="id_selector">This content is styled by using CSS id selector. Applied blue background-color for tag with
+            id(#id_selector)</p>
+        <h4 class="class_selector">Styles applied by using CSS class selector(.class_selector).</h4>
+    </template>
+    <script>
+        function showContent() {
+            let temp = document.getElementsByTagName("template")[0];
+            let clon = temp.content.cloneNode(true);
+            document.body.appendChild(clon);
+        }
+    </script>
+</body>
+
+</html>
