@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <meta name="viewport" content="device-width, initial-scale=1.0">
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .resizable-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .w3-third {
+        width: 30%;
+    }
+
+    /* Use a media query to add a break point at 800px: */
+    @media screen and (max-width: 750px) {
+
+        .resizable-container {
+            display: grid;
+        }
+
+        .w3-third {
+            width: 100%;
+            /* The width is 100%, when the viewport is 800px or smaller */
+        }
+    }
+</style>
+
+<body>
+    <img src="./girl_img.jpg" style="max-width: 100%;"
+        title="This image max-width is 100%. so it doesn't strech then in's original width."><br><br>
+    <img src="./girl_img.jpg" style="width: 100%"
+        title="This image width is 100%. so it covers the screen size of the device."><br><br>
+    <h3>Displaying different images based on browser width.</h3>
+    <p>The below image change as you change the browser width to 500px, 700px and 1000px.</p>
+    <picture>
+        <source srcset="./background1.jpg" media="(max-width: 500px)">
+        <source srcset="./background2.jpg" media="(max-width: 700px)">
+        <source srcset="./background3.jpg" media="(max-width: 1000px)">
+        <img src="./girl_img.jpg" alt="Girl" max-width="100" height="200">
+    </picture>
+    <h3>Resizable Text Size:</h3>
+    <h1 style="font-size:10vw">Hello World</h1>
+    <p>Resize the browser width to see how the above text size scales.</p>
+
+    <h3>Responsive design using media queries:</h3>
+    <p>Make sure you reach the breakpoint at 750px when resizing this frame.</p>
+    <div class="resizable-container">
+        <div class="w3-third">
+            <h2>London</h2>
+            <p>London is the capital city of England.</p>
+            <p>It is the most populous city in the United Kingdom,
+                with a metropolitan area of over 13 million inhabitants.</p>
+        </div>
+        <div class="w3-third">
+            <h2>Paris</h2>
+            <p>Paris is the capital of France.</p>
+            <p>The Paris area is one of the largest population centers in Europe,
+                with more than 12 million inhabitants.</p>
+        </div>
+        <div class="w3-third">
+            <h2>Tokyo</h2>
+            <p>Tokyo is the capital of Japan.</p>
+            <p>It is the center of the Greater Tokyo Area,
+                and the most populous metropolitan area in the world.</p>
+        </div>
+    </div>
+</body>
+
+</html>
