@@ -1,0 +1,69 @@
+<html>
+
+<style>
+    footer {
+        bottom: 0;
+        position: fixed;
+    }
+
+    button {
+        margin-bottom: 5px;
+    }
+
+    nav {
+        display: grid;
+    }
+</style>
+
+<body>
+    <h3>Article:</h3>
+    <p>Article represents a self contained piece that is independently disributed.
+    <article>this is article</article>
+    The above one is independent
+    </p>
+    <hr>
+    <audio controls>
+        <source src="./audio_sample.wav" type="audio/wav">
+    </audio><br><br>
+    <button onclick="playPause()">Play/Pause</button><br>
+    <video id="video">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    </video><br><br>
+    <hr>
+    <h3>Canvas:</h3>
+    <canvas id="mycanvas">
+    </canvas>
+    <hr>
+    <h3>Nav</h3>
+    <nav>
+        <a href="https://www.google.co.in/" target="_blank"
+            title="on clicking this you will navigate to google with new tab">Google</a>
+        <a href="https://www.facebook.com/login" target="_parent"
+            title="on clicking this you will navigate to google with parent tab">Facebook</a>
+        <a href="https://www.instagram.com/" title="on clicking this you will navigate to google with existing tab"
+            target="_self">Instagram</a>
+        <a href="https://x.com/i/flow/login" target="_top">Twitter</a>
+    </nav>
+</body>
+
+<script>
+    var myVideo = document.getElementById("video");
+
+    function playPause() {
+        if (myVideo.paused)
+            myVideo.play();
+        else
+            myVideo.pause();
+    }
+    var c = document.getElementById("mycanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "white");
+    // Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10, 10, 150, 80);
+</script>
+
+</html>
