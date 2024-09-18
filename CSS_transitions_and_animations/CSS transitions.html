@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <style>
+        div.transition1 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(72, 245, 184);
+            transition: 0.5s;
+            transition-delay: 1s;
+        }
+
+        div.transition1:hover {
+            width: 300px;
+        }
+
+        div.transition2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            transition: width 1s, height 1s, transform 1s;
+        }
+
+        div.transition2:hover {
+            width: 300px;
+            height: 300px;
+            transform: rotate(180deg);
+        }
+
+        /* the below can be written using short hand property: div {
+            transition-property: width;
+            transition-duration: 2s;
+            transition-timing-function: linear;
+            transition-delay: 1s;
+        }
+
+        div {
+            transition: width 2s linear 1s;
+        } */
+    </style>
+</head>
+
+<body>
+    <h2>CSS Transitions</h2>
+    <div class="transition1"></div>
+    <p>The above transition effect is made by transition property on hover.</p>
+    <p>Note: The transition effect has a 1 second delay before starting.</p>
+    <div class="transition2"></div>
+    <p>The above transition effect is made by transition( width 1s, height 1s, transform 1s)and tranform(rotate(180deg))
+        property onhover.</p>
+</body>
+
+</html>
