@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var Function</title>
+    <style>
+        :root {
+            --blue: #1e90ff;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--blue);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--blue);
+        }
+
+        .container {
+            color: var(--blue);
+            background-color: var(--white);
+            padding: 15px;
+        }
+
+        button {
+            color: var(--blue);
+            border: 1px solid var(--blue);
+            padding: 5px;
+        }
+
+        .button-1 {
+            --blue: blue;
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+        .button-2 {
+            --button-pink: pink;
+            background-color: var(--button-pink);
+            color: var(--white);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Using the var() Function</h1>
+
+    <div class="container">
+        <p>The below background and colors has been set by using var() function.</p>
+        <p>The first button background color local variable overrides the global variable.</p>
+        <button class="button-1">button 1</button>
+        <button class="button-2" title="the background pink set by adding the new local variable">button 2</button>
+    </div>
+</body>
+
+</html>

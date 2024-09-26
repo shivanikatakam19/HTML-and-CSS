@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable with JS</title>
+    <style>
+        :root {
+            --blue: rgb(155, 131, 235);
+            --white: white;
+        }
+
+        body {
+            height: 95vh;
+            background-color: var(--blue);
+        }
+
+        .container {
+            --fontsize: 30px;
+            background-color: var(--white);
+            padding: 15px;
+            font-size: var(--fontsize);
+        }
+
+        button {
+            background-color: var(--blue);
+            padding: 5px;
+            margin: 3px;
+            color: var(--white);
+        }
+
+        p {
+            color: var(--blue);
+        }
+
+        h2 {
+            color: var(--white);
+        }
+
+        @media screen and (max-width: 500px) {
+            .container {
+                --fontsize: 15px;
+                font-size: var(--fontsize);
+            }
+        }
+    </style>
+    <script>
+        var r = document.querySelector(':root')
+
+        function alertVariable() {
+            var rs = getComputedStyle(r);
+            alert('The value of --blue is: ' + rs.getPropertyValue('--blue'))
+        }
+
+        function setDiffBg() {
+            r.style.setProperty('--blue', 'lightblue');
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Get and Change CSS variable with java script</h2>
+    <div class="container">
+        <p>Paris is the capital and largest city of France. With an official estimated
+            population of 2,102,650 residents in January 2023 in an area of more than 105 km (41 sq mi), Paris is
+            the fourth-largest city in the European Union and the 30th most densely populated city in the world in
+            2022.Since the 17th century, Paris has been one of the world's major centres of finance, diplomacy,
+            commerce, culture, fashion, and gastronomy. For its leading role in the arts and sciences, as well as its
+            early and extensive system of street lighting, in the 19th century, it became known as the City of Light.
+        </p>
+
+        <p>Note: When the browser's width is less than 500px, the font-size of this div is 15px. When it is 500px or
+            wider, set the --fontsize variable value to 30px. Resize the browser window to see the effect.</p>
+        <button onclick="alertVariable()">Get CSS variable with JS</button>
+        <button onclick="setDiffBg()">Change CSS variable with JS</button>
+    </div>
+</body>
+
+</html>
