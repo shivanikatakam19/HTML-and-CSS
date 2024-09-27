@@ -1,0 +1,73 @@
+.bg-color {
+  color: #ff8000;
+}
+body {
+  color: #b3bc33;
+  font: 14px Arial, sans-serif;
+}
+div {
+  font-size: 17px;
+}
+h1 {
+  color: #5fb8d6;
+  font-size: 50px;
+  width: 50%;
+  background-color: #7979d8;
+}
+.container h1 {
+  background-color: #0ff;
+  color: #000;
+  width: 100%;
+}
+.container p {
+  font-size: 20px;
+  color: #7979d8;
+}
+.container .myclass h1 {
+  font-size: 25px;
+  color: #ad7474;
+  width: 100%;
+}
+@media screen and (max-width: 500px) {
+  .container .myclass h1 {
+    color: #f00;
+  }
+}
+.container .myclass p {
+  font-size: 25px;
+  color: #3c7949;
+}
+.mycolor {
+  background-color: #e1ceba;
+  width: 100%;
+}
+.mycolor1 {
+  background-color: #466f92;
+}
+.container1,
+.style {
+  font-style: italic;
+  color: #00f;
+}
+.style {
+  background: #bf70a5;
+}
+.img {
+  font-size: 30px;
+}
+.button-basic {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #000;
+  color: #000;
+}
+.button-success {
+  background-color: #008000;
+  padding: 10px;
+  border: 1px solid #000;
+}
+.button-submit {
+  background-color: #00f;
+  padding: 3px;
+  border: 1px solid #000;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sass</title>
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+
+<body>
+
+
+    <h1>Hello World</h1>
+
+    <p>Local Variable overriding the global variable.(blue -> red)</p>
+
+    <div id="container">This is some text inside a container1.</div>
+    <div id="container">This is some text inside a container2.</div>
+
+    <p> !global overrides the variable value in global level</p>
+
+    <h4>The below nav is styles are applied by using nesting.</h4>
+
+    <nav>
+        <ul>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">SASS</a></li>
+        </ul>
+    </nav>
+
+    <i>This text is styled by using @mixin, @include tag and html selector.</i><br><br>
+
+    <mark class="danger-info">This text is styled by using @mixin(multiple), @include tag and html
+        class.</mark><br><br>
+
+    <mark class="danger">This text is styled by using @mixin by passing arguments to it.</mark><br><br>
+    <mark class="success">This text is styled by using @mixin by default arguments.</mark><br><br>
+
+    <!-- The below buttons uses @extend to style them it uses inheritance concept to style the changes.
+         It does not duplicate code but merges selectors that share the same extended styles. -->
+
+    <button class="button-basic">Basic Button</button>
+    <button class="button-report">Report</button>
+    <button class="button-submit">Submit</button>
+</body>
+
+</html>

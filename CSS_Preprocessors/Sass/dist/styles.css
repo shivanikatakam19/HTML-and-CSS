@@ -1,0 +1,85 @@
+@import './dist/reset.css';
+body {
+  font-style: Helvetica, sans-serif;
+  color: #5fb8d6;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: gray;
+  font-size: 20px;
+}
+@media screen and (max-width: 500px) {
+  nav a {
+    color: red;
+  }
+}
+
+p {
+  color: #ec536c;
+  font-size: 20px;
+}
+
+h1 {
+  color: #ec536c;
+}
+
+i {
+  color: #932c2c;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.danger-info {
+  color: #932c2c;
+  font-size: 18px;
+  font-weight: bold;
+  border: 3px solid red;
+  padding: 5px;
+  margin: 3px;
+  background-color: #7979d8;
+}
+
+.danger {
+  background-color: red;
+  border: 2px solid pink;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+.success {
+  background-color: green;
+  border: 2px solid black;
+  color: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+.button-basic, .button-submit, .button-report {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.button-report {
+  background-color: red;
+}
+
+.button-submit {
+  background-color: blue;
+  color: white;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylus</title>
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body>
+    <h1>This is styled by using variables and operations</h1>
+
+    <div class="container">
+        <h1>This h1 tag font size set by using operations in less.</h1>
+        <p>LESS is a dynamic style sheet language that extends the capability of CSS.</p>
+        <div class="myclass">
+            <h1 title="it is acheived through bubbling process.">Resize the browser with to 500px or less than 500px to
+                see the difference in this heading.</h1>
+            <p>This is paragraph.</p>
+        </div>
+    </div>
+    <div class="mycolor">This div is styles by using stylus functions.</div><br>
+    <div class="mycolor1">This div is styles by using overriding the global variable with local
+        variable.</div><br>
+    <div class="bg-color">This div is styled by using @import statement to import the styles from another file.</div><br>
+    <div class="style">This div is styled by using extends tag.(child class)</div><br>
+    <div class="container1">This div is styled by using extends tag(parent class).</div><br>
+    <!-- The below buttons uses mixins to style It does duplicate code but merges selectors that share the same extended styles. -->
+
+         <button class="button-basic">Basic Button</button>
+         <button class="button-success">Report</button>
+         <button class="button-submit">Submit</button>
+</body>
+</html>

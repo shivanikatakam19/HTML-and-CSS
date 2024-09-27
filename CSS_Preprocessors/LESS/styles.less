@@ -1,0 +1,78 @@
+@import "./colors.less";
+
+@background: rgb(121, 121, 216);
+@font-color: rgb(95, 184, 214);
+@font-size-h1: 25px;
+@font-size-p: 20px;
+@font-style: Helvetica, sans-serif;
+@link-color: @font-color;
+@color: #FF8000;
+@width: 0.5;
+
+.container {
+    h1 {
+        font-size: @font-size-h1 *2;
+        color: @font-color;
+    }
+
+    p {
+        font-size: @font-size-p;
+        color: @background;
+    }
+
+    .myclass {
+
+        h1 {
+            font-size: @font-size-h1;
+            color: @link-color;
+
+            @media screen and (max-width: 500px) {
+                color: red;
+            }
+        }
+
+        p {
+            font-size: 25px;
+            color: #3C7949;
+        }
+    }
+}
+
+p {
+    color: ~"blue";
+    font-size: @font-size-p;
+}
+
+.mycolor {
+    background-color: @color;
+    width: percentage(@width);
+}
+
+.mycolor1 {
+    @color: rgb(33, 83, 126);
+    background-color: @color;
+}
+
+.style:extend(.container1, .img) {
+    background: #BF70A5;
+}
+
+.container1 {
+    font-style: italic;
+    color: blue;
+}
+
+.img {
+    font-size: 30px;
+}
+
+.p1(@width, @style, @color) {
+    color: darkcyan;
+    border: @width @style @color;
+    padding: 5px;
+}
+
+.p2 {
+    background-color: black;
+    .p1(2px; solid; black);
+}

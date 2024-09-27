@@ -1,0 +1,105 @@
+@import './dist/reset.css';
+
+$background: rgb(121, 121, 216);
+$font-color: rgb(95, 184, 214);
+$font-size: 20px;
+$width: 200px;
+$font-style: Helvetica, sans-serif;
+$href-color: gray;
+
+body {
+    font-style: $font-style;
+    color: $font-color;
+}
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+        color: $href-color;
+        font-size: $font-size;
+
+        @media screen and (max-width: 500px) {
+            color: red;
+        }
+    }
+}
+
+p {
+    $font-color: rgb(236, 83, 108) !global;
+    color: $font-color;
+    font-size: $font-size;
+}
+
+h1 {
+    color: $font-color;
+}
+
+@mixin error-text {
+    color: rgb(147, 44, 44);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@mixin error-border {
+    border: 3px solid red;
+    padding: 5px;
+    margin: 3px;
+}
+
+i {
+    @include error-text()
+}
+
+.danger-info {
+    @include error-text();
+    @include error-border();
+    background-color: $background;
+}
+
+@mixin status-text-with-border($color: white, $background: green, $border: black) {
+    background-color: $background;
+    border: 2px solid $border;
+    color: $color;
+    padding: 5px;
+    margin: 5px;
+}
+
+.danger {
+    @include status-text-with-border($background: red, $border: pink)
+}
+
+.success {
+    @include status-text-with-border()
+}
+
+.button-basic {
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.button-report {
+    @extend .button-basic;
+    background-color: red;
+}
+
+.button-submit {
+    @extend .button-basic;
+    background-color: blue;
+    color: white;
+}

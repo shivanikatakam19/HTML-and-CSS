@@ -1,0 +1,84 @@
+@import "colors.styl";
+
+background = rgb(121, 121, 216)
+font-color = rgb(95, 184, 214)
+font-color-p = rgb(173, 116, 116)
+font-size-h1= 25px
+font-size-p= 20px
+font-size-div = 17px
+font-style= Helvetica, sans-serif
+color= #e1ceba
+width = 1.0
+
+
+body
+  color rgb(179, 188, 51)
+  font 14px Arial, sans-serif
+
+div{
+    font-size  font-size-div
+}
+
+h1 
+  color font-color
+  font-size font-size-h1*2
+  width percentage(width / 2)
+  background-color background
+
+.container
+    & h1
+        background-color cyan
+        color black
+        width 100%
+    & p 
+        font-size font-size-p
+        color background
+    
+    .myclass 
+
+        & h1 
+            font-size font-size-h1
+            color font-color-p
+            width 100%
+
+            @media screen and (max-width: 500px) 
+                color: red;
+
+        & p 
+            font-size: 25px
+            color: #3C7949
+
+
+.mycolor 
+    background-color color
+    width percentage(width)
+
+.mycolor1 
+    color = rgb(70, 111, 146);
+    background-color: color;
+
+.container1 
+    font-style: italic;
+    color: blue;
+
+.style  
+    @extends .container1
+    background #BF70A5
+
+.img 
+    font-size: 30px;
+
+button-styles(width, color, padding)
+  background-color: color
+  padding: padding
+  border: width solid black
+
+.button-basic
+  button-styles(1px, white, 10px)
+  color black
+
+.button-success
+    button-styles(1px, green, 10px)
+
+.button-submit 
+    button-styles(1px, blue, 3px)
